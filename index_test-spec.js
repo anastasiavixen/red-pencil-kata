@@ -35,8 +35,15 @@ describe('Product', function() {
         expect(result.calculatePriceReduction(250.99)).toBeGreaterThan(5);
     });
     
-    it("check that updated price is lower not more than 30%", function() {
+    it("check that updated price is lower by not more than 30%", function() {
         var result = new Product;
         expect(result.calculatePriceReduction(250.99)).toBeLessThan(30);
     });
+    
+    it("check that current price date is more than 30 days old", function() {
+        var result = new Product;
+        expect(result.calculatePriceDayLength()).toBeGreaterThan(30);
+    });
+
+    
 });
