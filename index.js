@@ -24,13 +24,14 @@ Product.prototype.getCurrentPriceDate = function(){
     return this.currentPriceStartDate;
 }
 
-Product.prototype.updatePrice = function(price){  
+Product.prototype.updatePrice = function(price){     
     if(this.currentPrice != null){
         this.previousPrice = this.currentPrice;
         this.previousPriceStartDate = this.currentPriceStartDate;
     }
     this.currentPrice = price; 
     this.currentPriceStartDate = new Date();
+    
     return this.currentPrice;
 };                 
 
@@ -40,7 +41,7 @@ Product.prototype.updatePriceDate = function(){
 }
 
 Product.prototype.calculatePriceReduction = function(price){
-    var newPrice = Product.prototype.updatePrice(price);
+    var newPrice = price;
     var currentPrice = this.currentPrice;
     var percentageChange = (currentPrice - newPrice)/currentPrice * 100;
     return percentageChange;
