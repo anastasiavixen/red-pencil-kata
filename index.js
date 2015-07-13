@@ -15,14 +15,24 @@ var Product = function Product(){
     this.previousPriceStartDate = null;   
 };
 
+Product.prototype.getOriginalPrice = function(){ 
+    return this.originalPrice;
+};
+
 Product.prototype.updatePrice = function(price){  
     if(this.currentPrice == null){
         this.currentPrice = price; 
         this.currentPriceStartDate = new Date();
+    }else{
+        if(this.currentPrice > price){
+            
+        }
     }
     
     return this.currentPrice;
-}                  
+};                 
+
+
 
 module.exports = Product;
 
