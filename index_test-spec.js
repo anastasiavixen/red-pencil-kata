@@ -15,9 +15,9 @@ var Product = require('./');
 
 describe('Product', function() {
     
-  it("verify updatePrice function is available", function() {
-    var result = Product.updatePrice(10);
-    expect(result).toBeTruthy();
-  });
+    it("verify updatePrice function is available", function() {
+        var result = new Product;
+        expect(result.updatePrice(250.99)).toBeTruthy();
+    });
     
 });
