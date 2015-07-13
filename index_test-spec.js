@@ -20,4 +20,14 @@ describe('Product', function() {
         expect(result.updatePrice(250.99)).toBeTruthy();
     });
     
+    it("check that price returned is lower", function() {
+        var result = new Product;
+        expect(result.updatePrice(250.99)).toEqual(250.99);
+    });
+    
+    xit("check that price returned is lower", function() {
+        var result = new Product;
+        expect(result.updatePrice(350.99)).toEqual(299.99);
+    });
+    
 });
