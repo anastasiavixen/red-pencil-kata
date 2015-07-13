@@ -23,18 +23,19 @@ Product.prototype.updatePrice = function(price){
     if(this.currentPrice == null){
         this.currentPrice = price; 
         this.currentPriceStartDate = new Date();
-    }else{
-        if(this.currentPrice > price){
-            
-        }
     }
-    
     return this.currentPrice;
 };                 
+
+Product.prototype.calculatePriceReduction = function(price){
+    var newPrice = Product.prototype.updatePrice(price);
+    var originalPrice = this.originalPrice;
+    var percentageChange = (originalPrice - newPrice)/originalPrice * 100;
+    return percentageChange;
+};
 
 
 
 module.exports = Product;
-
-var newProduct = new Product();
-console.log(newProduct.updatePrice(250.99));
+//var newProduct = new Product;
+//console.log(newProduct.calculatePriceReduction(250.99));

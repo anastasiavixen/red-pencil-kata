@@ -30,4 +30,9 @@ describe('Product', function() {
         expect(result.updatePrice(350.99)).toBeGreaterThan(result.getOriginalPrice());
     });
     
+    it("check that updated price is lower by at least 5%", function() {
+        var result = new Product;
+        expect(result.calculatePriceReduction(250.99)).toBeGreaterThan(5);
+    });
+    
 });
